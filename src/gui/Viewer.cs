@@ -23,6 +23,11 @@ namespace gui
             reload();
         }
 
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void refreshToolStripMenuItem_Click(object sender, EventArgs e)
         {
             reload();
@@ -34,6 +39,7 @@ namespace gui
             this.dataGridView1.Rows.Clear();
 
             fill();
+            qotd();
 
             this.ResumeLayout();
         }
@@ -57,7 +63,18 @@ namespace gui
                     this.dataGridView1.Rows.Add(r);
                 }
             }
+        }
+
+        private void qotd()
+        {
+            // read qotd
+            quotations q = new quotations();
+            string quote = q.quote();
+
+            this.label1.Text = quote;
             
         }
+
+
     }
 }

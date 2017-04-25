@@ -19,15 +19,16 @@ namespace configs
             {
                 case "members":
                 case "time":
+                case "qotd":
                     member = member.ToLower();
                     break;
                 default:
                     member = "ping";
                     break;
             }
-            // http://localhost/angular/libraries/dto.php/cs/tests/api/time.php
-            // http://localhost/angular/libraries/dto.php/cs/tests/api/members.php
-            return this.endpoint_server + "/api/" + member + ".php";
+
+            string url = this.endpoint_server + "/api/" + member + ".php";
+            return url;
         }
 
         /**
@@ -42,6 +43,12 @@ namespace configs
         public string time
         {
             get { return this.url("time"); }
+            private set { }
+        }
+
+        public string qotd
+        {
+            get { return this.url("qotd"); }
             private set { }
         }
     }
