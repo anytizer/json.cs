@@ -1,4 +1,6 @@
-﻿namespace gui
+﻿using System.Drawing;
+
+namespace gui
 {
     partial class Viewer
     {
@@ -29,13 +31,13 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.value = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -49,7 +51,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(574, 222);
             this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.Control;
+            this.label1.ForeColor = System.Drawing.Color.Fuchsia;
+            this.label1.Location = new System.Drawing.Point(3, 209);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(38, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "QOTD";
             // 
             // dataGridView1
             // 
@@ -60,8 +72,11 @@
             this.value});
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(574, 190);
+            this.dataGridView1.Size = new System.Drawing.Size(574, 206);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.Beige;
+            //this.dataGridView1.AllowUserToAddRows = false; // causes index error
+            this.dataGridView1.AllowUserToDeleteRows = false;
             // 
             // id
             // 
@@ -94,17 +109,6 @@
             this.refreshToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
             this.refreshToolStripMenuItem.Text = "Refresh";
             this.refreshToolStripMenuItem.Click += new System.EventHandler(this.refreshToolStripMenuItem_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label1.ForeColor = System.Drawing.Color.Fuchsia;
-            this.label1.Location = new System.Drawing.Point(4, 197);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "QOTD";
             // 
             // Viewer
             // 

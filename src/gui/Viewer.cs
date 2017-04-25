@@ -23,11 +23,6 @@ namespace gui
             reload();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void refreshToolStripMenuItem_Click(object sender, EventArgs e)
         {
             reload();
@@ -56,6 +51,7 @@ namespace gui
                 foreach (idv row in all)
                 {
                     DataGridViewRow r = (DataGridViewRow)dataGridView1.Rows[0].Clone();
+
                     r.Cells[0].Value = row.id;
                     r.Cells[1].Value = row.name;
                     r.Cells[2].Value = row.value;
@@ -74,7 +70,5 @@ namespace gui
             this.label1.Text = quote;
             
         }
-
-
     }
 }
